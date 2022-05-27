@@ -9,5 +9,10 @@ pipeline{
                  sh 'npm install'
             }
         }
+        post{
+            success{
+                junit '**/TEST-.xml'
+            }
+        }
     }
 }

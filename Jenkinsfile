@@ -6,7 +6,9 @@ pipeline{
                 git 'https://github.com/venkatesh-pogula/js-e2e-express-server.git'
             }
             stage('build'){
-                 sh 'npm install'
+                 sh '''npm install
+                       npm run build
+                       npm pack'''
             }
         }
         post{
@@ -16,3 +18,5 @@ pipeline{
         }
     }
 }
+
+

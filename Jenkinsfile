@@ -3,7 +3,7 @@ pipeline{
     stages('scm'){
         stage{
             steps{
-                git 'https://github.com/venkatesh-pogula/js-e2e-express-server.git'
+                git branch: 'main' , url:'https://github.com/venkatesh-pogula/js-e2e-express-server.git'
             }
             stage('build'){
                  sh '''npm install
@@ -13,7 +13,7 @@ pipeline{
         }
         post{
             success{
-                junit '**/TEST-.xml'
+                archive '**/TEST-.xml'
             }
         }
     }

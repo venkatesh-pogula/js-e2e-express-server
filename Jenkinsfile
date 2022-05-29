@@ -1,5 +1,5 @@
 pipeline{
-    agent{label ('node_nodejs')}
+    agent{label ('node_js_11')}
     stages('scm'){
         stage{
             steps{
@@ -13,7 +13,7 @@ pipeline{
         }
         post{
             success{
-                archive '**/TEST-.xml'
+                archive '**/*.tgz'
             }
         }
     }

@@ -1,5 +1,8 @@
 pipeline{
     agent{label ('node_js_11')}
+    triggers{
+        cron('H * * * *')
+    }
     stages{
         stage('scm'){
             steps{
